@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.active {
+  color: blue;
+}
+
+.activeMy {
+  color: orange;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

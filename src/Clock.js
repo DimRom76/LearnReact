@@ -6,6 +6,7 @@ class Clock extends React.Component {
     this.state = {
       date: new Date(),
     };
+    this.title = props.title;
   }
 
   componentDidMount() {
@@ -24,6 +25,7 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет</h1>
+        <h2>{this.title}</h2>
         <h2>
           Сейчас{" "}
           {this.state.date.toLocaleDateString() +
