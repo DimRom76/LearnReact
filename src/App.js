@@ -60,6 +60,11 @@ function App() {
                 State
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName="activeMy" to="/cycle">
+                Life cycle
+              </NavLink>
+            </li>
           </nav>
           <Switch>
             {/* выполняеться по очереди до первого совпадения, внизу можно добавить
@@ -77,6 +82,7 @@ function App() {
             <Route path="/users/:userName" component={UserId} />
             <Route path="/event" component={MyEvent} />
             <Route path="/state" component={MyState} />
+            <Route path="/cycle" component={MyState} />
             <Route component={Error} />
           </Switch>
         </div>
