@@ -1,19 +1,22 @@
-import React from "react";
+import React from 'react';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
-} from "react-router-dom";
-import Currency from "./currency";
-import Home from "./Home";
-import Clock from "./Clock";
-import Users from "./Users";
-import UserId from "./UserId";
-import Error from "./Error";
-import MyEvent from "./MyEvent";
-import MyState from "./MyState";
+} from 'react-router-dom';
+import Currency from './currency';
+import Home from './Home';
+import Clock from './Clock';
+import Users from './Users';
+import UserId from './UserId';
+import Error from './Error';
+import MyEvent from './MyEvent';
+import MyState from './MyState';
+import LifeCycle from './LifeCycle';
+import LifeCycle1 from './LifeCycle1';
+import LifeCycle2 from './LifeCycle2';
 
 function App() {
   return (
@@ -74,7 +77,7 @@ function App() {
             {/* передаем props через route */}
             <Route
               path="/clock"
-              render={(props) => (
+              render={props => (
                 <Clock {...props} title={`Props through render`} />
               )}
             />
@@ -82,7 +85,13 @@ function App() {
             <Route path="/users/:userName" component={UserId} />
             <Route path="/event" component={MyEvent} />
             <Route path="/state" component={MyState} />
-            <Route path="/cycle" component={MyState} />
+            <Route exact path="/cycle" component={LifeCycle} />
+            <Route
+              exact
+              path="/cycle/function"
+              render={props => <LifeCycle2 {...props} arg="150" />}
+            />
+            <Route exact path="/cycle/class" component={LifeCycle1} />
             <Route component={Error} />
           </Switch>
         </div>

@@ -1,12 +1,15 @@
-import React from "react";
-import LifeCycle1 from './LifeCycle1'
+import React from 'react';
 
 function LifeCycle() {
-
   return (
     <>
       <h1>Жизненный цикл</h1>
-      <LifeCycle1 arg={120} />
+      <li>
+        <a href="/cycle/class">классовый компонент</a>
+      </li>
+      <li>
+        <a href="/cycle/function">функциональный компонент</a>
+      </li>
     </>
   );
 }
