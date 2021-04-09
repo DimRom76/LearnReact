@@ -17,6 +17,7 @@ import MyState from './MyState';
 import LifeCycle from './LifeCycle';
 import LifeCycle1 from './LifeCycle1';
 import LifeCycle2 from './LifeCycle2';
+import UseEffect from './UseEffect';
 
 function App() {
   return (
@@ -68,6 +69,16 @@ function App() {
                 Life cycle
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName="activeMy" to="/useEffect1">
+                useEffect1
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="activeMy" to="/useEffect2">
+                useEffect2
+              </NavLink>
+            </li>
           </nav>
           <Switch>
             {/* выполняеться по очереди до первого совпадения, внизу можно добавить
@@ -92,6 +103,16 @@ function App() {
               render={props => <LifeCycle2 {...props} arg="150" />}
             />
             <Route exact path="/cycle/class" component={LifeCycle1} />
+            <Route
+              exact
+              path="/useEffect1"
+              render={props => <UseEffect {...props} categoryTd="1" />}
+            />
+            <Route
+              exact
+              path="/useEffect2"
+              render={props => <UseEffect {...props} categoryTd="2" />}
+            />
             <Route component={Error} />
           </Switch>
         </div>
